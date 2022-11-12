@@ -1,6 +1,5 @@
 import express from 'express'
 const app = express()
-const port = 3000 
 
 import bodyParser from 'body-parser'
 app.use(bodyParser.json())
@@ -78,6 +77,6 @@ app.post('/users/login', redirectIfAuthenticatedMiddleware , loginUserController
 //     404
 app.use((req, res) => res.render('notfound'));
 
-app.listen(port , () =>{
-    console.log(`APP IS RENDER IN ${port}`)
+app.listen(process.env.PORT , () => {
+    
 })
